@@ -7,47 +7,38 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   Text,
   View
 } from 'react-native';
 
+BASE_URL = 'https://s3.amazonaws.com/react-native-sample-app/';
+
 export default class reactNativeHackreactor extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+       dataSource: "I will be updated!"
+     };
+  }
+
+  componentDidMount() {
+    const { dataSource } = this.state;
+    const initialLoad_URL = BASE_URL + 'onload.json';
+
+  }
+
   render() {
+    const { dataSource } = this.state;
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+      <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+        <Text>
+          {dataSource}
         </Text>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('reactNativeHackreactor', () => reactNativeHackreactor);
