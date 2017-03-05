@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Image, NavigatorIOS, Text, View } from 'react-native';
+const colors = {
+  'royals' : '#E7E9F7',
+  'babies' : '#8E7ED7',
+  'pets' : '#5DC050'
+}
 
 export default class ListViewRow extends Component {
 
@@ -8,6 +13,7 @@ export default class ListViewRow extends Component {
   }
 
   render() {
+
     return (
       <View style={{flex: 1,
         flexDirection: 'column',
