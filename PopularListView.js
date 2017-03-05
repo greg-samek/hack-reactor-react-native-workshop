@@ -36,6 +36,7 @@ Creating the ListViewRow.
 dataSource={this.state.dataSource}
 renderRow={(rowData) => <ListViewRow {... rowData} /> }
 renderSeparator={(sectionId, rowId) => <View key={rowId} style={{ flex: 1, height: 3, backgroundColor: '#F0F0F0'}} />}
+/>
  */
 
   render() {
