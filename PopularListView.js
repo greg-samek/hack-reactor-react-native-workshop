@@ -19,25 +19,14 @@ export default class PopularListView extends Component {
      fetch(initialLoad_URL)
      .then((response) => response.json())
      .then( (json) => {
-       // Instantiate a new ListView dataSource.
-       // const ds =
-       // Set dataSource using cloneWithRows.
-       //this.setState({dataSource: , loading: false});
+       const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+       this.setState({dataSource: ds.cloneWithRows(json), loading: false});
      })
      .catch((error) => {
        console.warn(error);
      });
 
    }
-
- /*
-Creating the ListViewRow.
-<ListView style={{marginTop: 60}}
-dataSource={this.state.dataSource}
-renderRow={(rowData) => <ListViewRow {... rowData} /> }
-renderSeparator={(sectionId, rowId) => <View key={rowId} style={{ flex: 1, height: 3, backgroundColor: '#F0F0F0'}} />}
-/>
- */
 
   render() {
     const {loading} = this.state;
@@ -53,7 +42,11 @@ renderSeparator={(sectionId, rowId) => <View key={rowId} style={{ flex: 1, heigh
             />
           }
           {!loading &&
-            <Text> ListView goes here! </Text>
+            <ListView style={{marginTop: 60}}
+            dataSource={this.state.dataSource}
+            renderRow={(rowData) => <ListViewRow {... rowData} /> }
+            renderSeparator={(sectionId, rowId) => <View key={rowId} style={{ flex: 1, height: 3, backgroundColor: '#F0F0F0'}} />}
+            />
 
           }
 
