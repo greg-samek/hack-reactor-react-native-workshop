@@ -7,6 +7,7 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  NavigatorIOS,
   Text,
   View
 } from 'react-native';
@@ -19,9 +20,14 @@ export default class reactNativeHackreactor extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
-        <PopularListView/>
-      </View>
+      <NavigatorIOS
+        initialRoute={{
+          component: PopularListView,
+          title: 'People',
+        }}
+        titleTextColor= '#3ab8ec'
+        style={{flex: 1}}
+      />
     );
   }
 }

@@ -15,7 +15,7 @@ export default class PopularListView extends Component {
 
    componentDidMount() {
      const { dataSource, loading } = this.state;
-     const initialLoad_URL = BASE_URL + 'onload.json';
+     const initialLoad_URL = BASE_URL + 'initialLoad.json';
      fetch(initialLoad_URL)
      .then((response) => response.json())
      .then( (json) => {
@@ -42,9 +42,9 @@ export default class PopularListView extends Component {
             />
           }
           {!loading &&
-            <ListView style={{marginTop: 60}}
+            <ListView style={{marginTop: 50}}
             dataSource={this.state.dataSource}
-            renderRow={(rowData) => <ListViewRow {... rowData} /> }
+            renderRow={(rowData) => <ListViewRow navigator={this.props.navigator} {... rowData} /> }
             renderSeparator={(sectionId, rowId) => <View key={rowId} style={{ flex: 1, height: 3, backgroundColor: '#F0F0F0'}} />}
             />
 
