@@ -3,10 +3,6 @@ import { Image, NavigatorIOS, Text, View } from 'react-native';
 
 export default class ListViewRow extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <View style={{flex: 1,
