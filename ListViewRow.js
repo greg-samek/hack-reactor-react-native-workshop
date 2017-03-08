@@ -33,6 +33,9 @@ export default class ListViewRow extends Component {
       <Text style={{fontWeight: '600', textAlign: 'center', fontFamily: 'helvetica' , fontSize: 17, flex: 0.7, marginTop: 5  }}>
             {this.props.title}
       </Text>
+      <Text>
+        My category is {this.props.category} my color is {colors[this.props.category]}
+      </Text>
       </View>
     );
   }
