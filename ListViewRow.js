@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Image, Text, TouchableHighlight, View, StyleSheet } from 'react-native';
+import { Image, NavigatorIOS, Text, TouchableHighlight, View, StyleSheet } from 'react-native';
+import DetailScreen from './DetailScreen';
 
 export default class ListViewRow extends Component {
 
   _handleNextPress(title, imageUrl, id) {
-    // Navigate to the DetailScreen using the navigator.
-    // Pass all props.
-    // Use the title param as the title for the next screen.
-    // ... you probably have to import 2 things to make this work.
+    this.props.navigator.push({
+      component: DetailScreen,
+      title: title,
+      passProps: { title: title, imageUrl: imageUrl, id:id },
+    });
   }
 
   render() {
