@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, ScrollView, Text, View } from 'react-native';
 
 export default class DetailScreen extends Component {
 
@@ -28,9 +28,10 @@ export default class DetailScreen extends Component {
       <View style={{flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        marginTop: 55,
+        marginTop: 0,
         marginBottom: 15
       }}>
+      <ScrollView>
         <Image
             style={{
               width: 370,
@@ -46,6 +47,7 @@ export default class DetailScreen extends Component {
         <Text style={{ fontWeight: '400',  fontFamily: 'helvetica' , fontSize: 15, marginTop: 10 }}>
                 {this.state.text}
         </Text>
+      </ScrollView>
       </View>
     );
   }
