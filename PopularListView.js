@@ -22,7 +22,7 @@ export default class PopularListView extends Component {
        // Instantiate a new ListView dataSource.
        // const ds =
        // Set dataSource using cloneWithRows.
-       //this.setState({dataSource: , loading: false});
+       //this.setState({dataSource: ds.cloneWithRows, loading: false});
      })
      .catch((error) => {
        console.warn(error);
